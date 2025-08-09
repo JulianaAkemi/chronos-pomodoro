@@ -1,28 +1,20 @@
-import { TimerIcon } from "lucide-react";
 import { Heading } from "./components/Heading";
 import "./styles/global.css";
 import "./styles/theme.css";
 import { Container } from "./components/Container";
+import { Logo } from "./components/Logo";
 
 export default function App() {
   return (
     <>
       <Container>
         <Heading>
-          Hello
-          <button>
-            <TimerIcon />
-          </button>
+          <Logo />
         </Heading>
       </Container>
 
       <Container>
-        <Heading>
-          Hello
-          <button>
-            <TimerIcon />
-          </button>
-        </Heading>
+        <Heading>MENU</Heading>
       </Container>
     </>
   );
