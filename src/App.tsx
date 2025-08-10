@@ -35,10 +35,6 @@ export default function App() {
           </div>
 
           <div className="formRow">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-
-          <div className="formRow">
             <Cycles />
           </div>
 
