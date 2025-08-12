@@ -1,5 +1,4 @@
-import React from "react";
-import { MainTemplate } from "../../components/templates/MainTemplate";
+import { MainTemplate } from "../../templates/MainTemplate";
 import { Container } from "../../components/Container";
 import { CountDown } from "../../components/CountDown";
 import { TaskForm } from "../../components/TaskForm";

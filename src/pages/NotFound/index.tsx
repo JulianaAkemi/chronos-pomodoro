@@ -1,12 +1,15 @@
 import { Container } from "../../components/Container";
+import { GenericHtml } from "../../components/GenericHtml";
 import { Heading } from "../../components/Heading";
-import { MainTemplate } from "../../components/templates/MainTemplate";
+import { MainTemplate } from "../../templates/MainTemplate";
 
-export function NotFound() {
+export function AboutPomodoro() {
   return (
     <MainTemplate>
       <Container>
-        <Heading>Página não encontrada</Heading>
+        <GenericHtml>
+          <Heading>404 - Página não encontrada 🚀</Heading>
+        </GenericHtml>
       </Container>
     </MainTemplate>
   );
