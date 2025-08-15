@@ -2,7 +2,7 @@ import { useRef, type FunctionComponent } from "react";
 import { DefaultInput } from "../DefaultInput";
 import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
-import { PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../contexts/TaskContext/getNextCycle";
@@ -53,6 +53,26 @@ export const TaskForm: FunctionComponent = () => {
     });
   }
 
+  function handleStopCurrentTask() {
+    setState((prevState) => {
+      return {
+        ...prevState,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        tasks: prevState.tasks.map((task) => {
+          if (task.id === prevState.activeTask?.id) {
+            return {
+              ...task,
+              interruptDate: Date.now(),
+            };
+          }
+          return task;
+        }),
+      };
+    });
+  }
+
   return (
     <form className="form" action="" onSubmit={handleCreateNewTask}>
       <div className="formRow">
@@ -72,7 +92,25 @@ export const TaskForm: FunctionComponent = () => {
       )}
 
       <div className="formRow">
-        <DefaultButton icon={<PlayCircleIcon />} />
+        {!state.activeTask ? (
+          <DefaultButton
+            icon={<PlayCircleIcon />}
+            aria-label="Start New Task"
+            title="Start New Task"
+            type="submit"
+            key="startNewTask"
+          />
+        ) : (
+          <DefaultButton
+            icon={<StopCircleIcon />}
+            aria-label="Stop Current Task"
+            title="Stop Current Task"
+            color="red"
+            type="button"
+            onClick={handleStopCurrentTask}
+            key="stopCurrentTask"
+          />
+        )}
       </div>
     </form>
   );
