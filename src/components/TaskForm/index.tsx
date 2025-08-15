@@ -61,6 +61,7 @@ export const TaskForm: FunctionComponent = () => {
           type="text"
           label="Task"
           ref={taskNameInput}
+          disabled={!!state.activeTask}
         />
       </div>
 
