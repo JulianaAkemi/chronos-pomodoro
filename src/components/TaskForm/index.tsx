@@ -9,6 +9,7 @@ import { getNextCycle } from "../../contexts/TaskContext/getNextCycle";
 import { getNextCycleType } from "../../contexts/TaskContext/getNextCycleType";
 
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
+import { Tips } from "../Tips";
 
 export const TaskForm: FunctionComponent = () => {
   const { state, dispatch } = useTaskContext();
@@ -56,6 +57,10 @@ export const TaskForm: FunctionComponent = () => {
           ref={taskNameInput}
           disabled={!!state.activeTask}
         />
+      </div>
+
+      <div className="formRow">
+        <Tips />
       </div>
 
       {state.currentCycle > 0 && (
