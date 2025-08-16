@@ -18,7 +18,6 @@ export function History() {
       <Container>
         <Heading>
           <span>History</span>
-
           <span className={styles.buttonContainer}>
             <DefaultButton
               icon={<TrashIcon />}
