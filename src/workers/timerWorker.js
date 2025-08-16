@@ -1,3 +1,5 @@
+let isRunning = false;
+
 self.onmessage = function (e) {
   if (isRunning) return;
 
