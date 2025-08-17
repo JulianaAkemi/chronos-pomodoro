@@ -10,6 +10,7 @@ import { getTaskStatus } from "../../utils/getTaskStatus";
 import { sortTasks, type SortTasksOptions } from "../../utils/sortTasks";
 import { useEffect, useState } from "react";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
+import { showMessage } from "../../adapters/showMessage";
 
 export function History() {
   const { state, dispatch } = useTaskContext();
@@ -22,6 +23,7 @@ export function History() {
       };
     }
   );
+  const [confirmClearHistory, setConfirmClearHistory] = useState(false);
   const hasTasks = state.tasks.length > 0;
 
   function handleSortTasks({ field }: Pick<SortTasksOptions, "field">) {
@@ -39,9 +41,13 @@ export function History() {
   }
 
   function handleResetHistory() {
-    if (!confirm("Are you sure you want to delete all history?")) return;
-
-    dispatch({ type: TaskActionTypes.RESET_STATE });
+    showMessage.dismiss();
+    showMessage.confirm(
+      "Are you sure you want to delete all history?",
+      (confirmation) => {
+        setConfirmClearHistory(confirmation);
+      }
+    );
   }
 
   useEffect(() => {
@@ -54,6 +60,14 @@ export function History() {
       }),
     }));
   }, [state.tasks]);
+
+  useEffect(() => {
+    if (!confirmClearHistory) return;
+
+    setConfirmClearHistory(false);
+
+    dispatch({ type: TaskActionTypes.RESET_STATE });
+  }, [confirmClearHistory, dispatch]);
 
   return (
     <MainTemplate>
