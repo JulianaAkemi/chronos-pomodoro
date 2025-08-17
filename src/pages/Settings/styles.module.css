@@ -1,0 +1,15 @@
+.buttonContainer button {
+  min-width: auto;
+  margin: 0;
+  padding: 1rem;
+}
+
+.buttonContainer button svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.description {
+  text-align: center;
+  margin: 3.2rem;
+}

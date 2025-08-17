@@ -69,12 +69,6 @@ export function History() {
     dispatch({ type: TaskActionTypes.RESET_STATE });
   }, [confirmClearHistory, dispatch]);
 
-  useEffect(() => {
-    return () => {
-      showMessage.dismiss();
-    };
-  }, []);
-
   return (
     <MainTemplate>
       <Container>

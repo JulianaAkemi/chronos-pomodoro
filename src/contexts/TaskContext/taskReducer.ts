@@ -63,6 +63,12 @@ export function taskReducer(
         ),
       };
     }
+    case TaskActionTypes.CHANGE_SETTINGS: {
+      return { ...state, config: { ...action.payload } };
+    }
+    case TaskActionTypes.RESET_SETTINGS: {
+      return { ...state, config: { ...initialTaskState.config } };
+    }
     default:
       return state;
   }
