@@ -85,6 +85,10 @@ export function Settings() {
     setLongBreakInput(state.config.longBreak);
   }, [state.config]);
 
+  useEffect(() => {
+    document.title = "Settings - Chronos Pomodoro";
+  }, []);
+
   return (
     <MainTemplate>
       <Container>
