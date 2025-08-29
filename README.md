@@ -10,14 +10,14 @@ Chronos Pomodoro is an interactive app that helps users manage their time effici
 - Web Workers: Used to manage the timer without freezing the interface.
 - Interval Customization: Allows users to adjust work and rest periods according to their needs.
 - Interactive Forms: Easy and intuitive data input, enhancing app usability.
-- 
+
 
 ## Tech Stack:
--React (Vite): For building a dynamic user interface.
--JavaScript: Core language for application logic.
--TypeScript: Improves code robustness and clarity with static typing.
--ContextAPI: Centralized state management for better performance.
--HTML/CSS: For application design and styling.
+- React (Vite): For building a dynamic user interface.
+- JavaScript: Core language for application logic.
+- TypeScript: Improves code robustness and clarity with static typing.
+- ContextAPI: Centralized state management for better performance.
+- HTML/CSS: For application design and styling.
 
 
 ## 🌐 Live Demo:
