@@ -21,7 +21,7 @@ Chronos Pomodoro is an interactive app that helps users manage their time effici
 
 
 ## 🌐 Live Demo:
-- [Try the app live: Chronos Pomodoro Live Demo](chronos-pomodoro-zeta.vercel.app)
+- [Try the app live: Chronos Pomodoro Live Demo](https://chronos-pomodoro-zeta.vercel.app)
   
 
 ## 📦 How to Run the Project Locally
